@@ -46,6 +46,23 @@
             {% endblock nav_bar %}
             </ul>
         </nav>
+
+        <span style="color: red">
+        {% if section %}
+			{% for t in section.translations %}
+		        Language: {{t.lang}}
+        	{% endfor %}
+        {% elif page %}
+			{% for t in page.translations %}
+		        Language: {{t.lang}}
+        	{% endfor %}
+        {#% else %}
+			{% for t in page.translations %}
+		        Language: {{t.lang}}
+        	{% endfor %#}
+        {% endif %}
+        </span>
+
     </header>
     {% endblock header %}
     {% block content %}
